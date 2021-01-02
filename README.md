@@ -1,5 +1,5 @@
 # Django Music Room
-Django and React.js powered Music Room app. Allows users to join a room the host creates, and to votes to skip/pause the song. Playlist generated using Spotify API.
+Django and React.js powered Music Room app. Allows users to join a room the host creates, and to vote to skip/pause the song. Playlist generated using Spotify API.
 
 In progress! 
 
