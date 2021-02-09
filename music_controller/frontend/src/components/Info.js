@@ -5,55 +5,57 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import { Link } from "react-router-dom";
 
 const pages = {
-    JOIN: "pages.join",
-    CREATE: "pages.create",
+  JOIN: "pages.join",
+  CREATE: "pages.create",
 };
 
 export default function Info(props) {
-    const [page, setPage] = useState(pages.JOIN);
+  const [page, setPage] = useState(pages.JOIN);
 
-    function joinInfo() {
-        return "Join page";
-    }
+  function joinInfo() {
+    return "Music Room delivers an interface for your friends to pause or vote to skip a song currently playing on your playlist!";
+  }
 
-    function createInfo(){
-        return "Create page";
-    }
+  function createInfo() {
+    return "Host begins by Creating Room and logging into Spotify account.";
+  }
 
-    useEffect(() => {
-        console.log("ran");
-        return () => console.log("cleanup")
-    });
+  useEffect(() => {
+    console.log("ran");
+    return () => console.log("cleanup");
+  });
 
-    return (
-        <Grid container spacing={1}>
-            <Grid item xs={12} align="center">
-                <Typography component="h4" variant="h4">
-                    What is House Party?
-                    </Typography>
-            </Grid>
-            <Grid item xs={12} align="center">
-                <Typography variant="body1">
-                    {page === pages.JOIN ? joinInfo(): createInfo()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} align="center">
-                <IconButton onClick = {() => {
-                    page === pages.CREATE? setPage(pages.JOIN): setPage(pages.CREATE);
-                    }}>
-                        {page === pages.CREATE? (
-                        <NavigateBeforeIcon />
-                        ) : (
-                        <NavigateNextIcon/>
-                        )}
-
-                </IconButton>
-            </Grid>
-            <Grid item xs={12} align="center">
-                <Button color="secondary" variant="contained" to="/" component={Link}>
-                    Back
-                </Button>
-            </Grid>
-        </Grid>
-    )
+  return (
+    <Grid container spacing={1}>
+      <Grid item xs={12} align="center">
+        <Typography component="h4" variant="h4">
+          What is Music Room?
+        </Typography>
+      </Grid>
+      <Grid item xs={12} align="center">
+        <Typography variant="body1">
+          {page === pages.JOIN ? joinInfo() : createInfo()}
+        </Typography>
+      </Grid>
+      <Grid item xs={12} align="center">
+        <IconButton
+          onClick={() => {
+            page === pages.CREATE ? setPage(pages.JOIN) : setPage(pages.CREATE);
+          }}
+        >
+          {page === pages.CREATE ? (
+            <NavigateBeforeIcon />
+          ) : (
+            <NavigateNextIcon />
+      
+          )}
+        </IconButton>
+      </Grid>
+      <Grid item xs={12} align="center">
+        <Button color="secondary" variant="contained" to="/" component={Link}>
+          Back
+        </Button>
+      </Grid>
+    </Grid>
+  );
 }

@@ -45,6 +45,11 @@ export default class MusicPlayer extends Component {
     return (
       <Card>
         <Grid container alignItems="center">
+          <Grid item align = "center" xs = {12}>
+          <Typography color="textSecondary" component="h5" variant="h5">
+          {this.props.title ? null : "No song is playing. To use Music Room, begin by playing a song on the Spotify App."}
+          </Typography>
+          </Grid>
           <Grid item align="center" xs={4}>
             <img src={this.props.image_url} height="100%" width="100%" />
           </Grid>
